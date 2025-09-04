@@ -27,12 +27,11 @@ body {
 }
 
 .person{
-  width: 220px;
   padding: 0;  
+  position: relative; 
 
   &__photo{
     position: relative;
-    width: 200px;  
     margin: 0 auto; 
 
     img{
@@ -81,22 +80,30 @@ body {
     font-weight: 400;
   }
 
-  &:hover &__details, 
-  &:hover &__photo {
-    background: #EEEEEE;  
-    width: 220px;
-    z-index: 2; 
-  }
-
-  &:hover &__photo {
-    padding: 0px 10px;
-  }
-
-  &:hover &__rank{
-      right: 40px;
-  }
 
   &:hover &__details &__extra {
     opacity: 1;
+  }
+
+    &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10;
+    width: 220px; 
+    height: 287px; 
+    background-color: #EEEEEE;
+    opacity: 0;   
+    transition: opacity 0.3s ease;
+    z-index: 0;  
+  }
+
+  &:hover::after {
+    opacity: 1;   
+  }
+
+  & > * {
+    position: relative;
+    z-index: 1;
   }
 }
