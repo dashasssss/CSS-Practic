@@ -30,10 +30,13 @@ body {
 }
 
 .person {
-  width: 200px;
+  width: 220px;
+  padding: 0;
 }
 
 .person__photo {
+  width: 200px;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -56,21 +59,44 @@ body {
 }
 
 .person__details {
+  box-sizing: border-box;
   text-align: center;
+  width: 200px;
+  margin: 0 auto;
   padding: 8px 13px;
   position: relative;
 }
 
 .person__name {
+  color: #2f4f4f;
   font-weight: 700;
   display: block;
 }
 
 .person__extra {
   opacity: 0;
+  font-weight: 400;
   position: absolute;
-  bottom: 8px;
+  bottom: -20px;
   left: 13px;
   right: 13px;
+}
+
+.person:hover .person__details, .person:hover .person__photo {
+  z-index: 2;
+  background: #eee;
+  width: 220px;
+}
+
+.person:hover .person__photo {
+  padding: 0 10px;
+}
+
+.person:hover .person__rank {
+  right: 40px;
+}
+
+.person:hover .person__details .person__extra {
+  opacity: 1;
 }
 /*# sourceMappingURL=CSS-Practic.b1276d39.css.map */
