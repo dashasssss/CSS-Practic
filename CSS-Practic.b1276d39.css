@@ -30,12 +30,11 @@ body {
 }
 
 .person {
-  width: 220px;
   padding: 0;
+  position: relative;
 }
 
 .person__photo {
-  width: 200px;
   margin: 0 auto;
   position: relative;
 }
@@ -44,6 +43,7 @@ body {
   border-radius: 200px;
   width: 200px;
   height: 200px;
+  transition: transform 1s;
   display: block;
 }
 
@@ -82,21 +82,29 @@ body {
   right: 13px;
 }
 
-.person:hover .person__details, .person:hover .person__photo {
-  z-index: 2;
-  background: #eee;
-  width: 220px;
-}
-
-.person:hover .person__photo {
-  padding: 0 10px;
-}
-
-.person:hover .person__rank {
-  right: 40px;
-}
-
 .person:hover .person__details .person__extra {
   opacity: 1;
+}
+
+.person:after {
+  content: "";
+  opacity: 0;
+  z-index: 0;
+  background-color: #eee;
+  width: 220px;
+  height: 287px;
+  transition: opacity .3s;
+  position: absolute;
+  top: 0;
+  left: -10px;
+}
+
+.person:hover:after {
+  opacity: 1;
+}
+
+.person > * {
+  z-index: 1;
+  position: relative;
 }
 /*# sourceMappingURL=CSS-Practic.b1276d39.css.map */
