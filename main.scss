@@ -27,10 +27,13 @@ body {
 }
 
 .person{
-  width: 200px;
+  width: 220px;
+  padding: 0;  
 
   &__photo{
     position: relative;
+    width: 200px;  
+    margin: 0 auto; 
 
     img{
       width: 200px;
@@ -53,8 +56,11 @@ body {
     }
 
     &__details{
+      box-sizing: border-box;
       padding: 8px 13px;
       text-align: center; 
+      width: 200px;  
+      margin: 0 auto; 
 
       position: relative;
     }
@@ -62,14 +68,34 @@ body {
     &__name{
       display: block;
       font-weight: 700;
+      color: #2F4F4F;
     }
 
   &__extra{
     position: absolute;
-    bottom: 8px;   
+    bottom: -20px;   
     left: 13px;   
     right: 13px;  
     opacity: 0;
+    font-weight: 400;
   }
 
+  &:hover &__details, 
+  &:hover &__photo {
+    background: #EEEEEE;  
+    width: 220px;
+    z-index: 2; 
+  }
+
+  &:hover &__photo {
+    padding: 0px 10px;
+  }
+
+  &:hover &__rank{
+      right: 40px;
+  }
+
+  &:hover &__details &__extra {
+    opacity: 1;
+  }
 }
